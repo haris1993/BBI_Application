@@ -1,0 +1,118 @@
+﻿@page
+@model RegisterModel
+@using BBI.Utility
+
+@{
+
+}
+
+<h1>Kreiranje novog zaposlenika</h1>
+
+<div class="row backgroundWhite border">
+    <div class="col-md-12">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Ime i prezime:</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.FullName" class="form-control" />
+                    <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Jedinstveni matični broj (JMBG):</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.JMBG" class="form-control" />
+                    <span asp-validation-for="Input.JMBG" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Spol:</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.Gender" class="form-control" />
+                    <span asp-validation-for="Input.Gender" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Datum rođenja:</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.BirthDate" class="form-control" />
+                    <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Mjesto stanovanja:</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.CityId" class="form-control" />
+                    <span asp-validation-for="Input.CityId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Email:</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Broj telefona:</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+           
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Password:</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Potvrda passworda:</label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3"></div>
+                <div class="col-5">
+                    <input type="radio" name="rdUserRole" value="@SD.Admin" /> @SD.Admin
+                    <input type="radio" name="rdUserRole" value="@SD.Manager" checked /> @SD.Manager
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5 offset-3">
+                    <button type="submit" class="btn btn-primary form-control">Registraj</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

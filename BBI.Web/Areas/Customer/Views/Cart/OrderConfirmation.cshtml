@@ -1,0 +1,20 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "OrderConfirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container row">
+    <div class="col-12 text-center">
+        <h1 class="text-primary text-center">Izabrani paket je uspješno prošao prijavu</h1><br />
+        <img src="~/images/submited.jpg" width="50%" />
+    </div>
+    <div class="col-12 text-center" style="color:maroon">
+        <br />
+           Hvala vam što ste dali povjerenje nama  <br />
+           Za par minuta će te dobiti Email za dalje instrukcije <br />
+        <br />
+        Broj vašeg zahtjeva je : @Model 
+    </div>
+</div>
